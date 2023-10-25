@@ -67,7 +67,12 @@ aside.show {
 }
 
 .cart--area {
+    margin-top: 30px; /* ajuste */
     padding:20px;
+}
+
+.cart--area h1 {
+    display: relative;
 }
 
 main {
@@ -150,7 +155,7 @@ h1, h2 {
     margin-top:10px;
 }
 
-.pizzaWindowArea {
+.pizzaWindowArea, .finishBuy, .sucessBuy{
     position:fixed;
     left:0;
     top:0;
@@ -164,7 +169,12 @@ h1, h2 {
     overflow-y:auto;
 }
 
-.pizzaWindowBody {
+.finishBuyBody, .sucessBuyBody{
+    padding: 10px;
+    align-items: center;
+}
+
+.pizzaWindowBody, .finishBuyBody, .sucessBuyBody{
     width:900px;
     background-color:#FFF;
     border-radius:10px;
@@ -192,24 +202,24 @@ h1, h2 {
     width:auto;
 }
 
-.pizzaInfo {
+.pizzaInfo, .buyInfo, .sucessInfo {
     flex:1;
     font-family:'Hepta Slab', Helvetica, Arial;
     padding-bottom:50px;
 }
 
-.pizzaInfo h1 {
+.pizzaInfo h1, .buyInfo h1 , .sucessInfo h1{
     margin-top:50px;
 }
 
-.pizzaInfo .pizzaInfo--desc {
+.pizzaInfo .pizzaInfo--desc, .buyInfo .finishBuy--desc {
     font-size:15px;
     color:#999;
     margin-top:10px;
     font-family:'Lato',Helvetica,Arial;
 }
 
-.pizzaInfo--sector {
+.pizzaInfo--sector, .finishBuy--sector {
     color:#CCC;
     text-transform: uppercase;
     font-size:14px;
@@ -217,13 +227,13 @@ h1, h2 {
     margin-bottom:10px;
 }
 
-.pizzaInfo--sizes {
+.pizzaInfo--sizes, .finishBuy--sizes {
     display:inline-flex;
     border-radius:10px;
     overflow:hidden;
 }
 
-.pizzaInfo--size {
+.pizzaInfo--size, .finishBuy--size {
     padding:10px 15px;
     color:#000;
     background-color:#EEE;
@@ -232,33 +242,42 @@ h1, h2 {
     cursor:pointer;
 }
 
-.pizzaInfo--size:hover {
+.pizzaInfo--size:hover, .finishBuy--size:hover {
     background-color:#CCC;
 }
 
-.pizzaInfo--size.selected {
+.pizzaInfo--size.selected, .finishBuy--size.selected {
     background-color:#d32f2f;
     color:#FFF;
 }
 
-.pizzaInfo--size.selected span {
+.pizzaInfo--size.selected span, .finishBuy--size.selected span {
     color:#D6D6D6;
 }
 
-.pizzaInfo--size span {
+.pizzaInfo--size span, .finishBuy--size span {
     font-size:12px;
     color:#999;
     font-weight: normal;
 }
 
-.pizzaInfo--price {
+.pizzaInfo--price, .finishBuy--price {
     display:flex;
     align-items:center;
 }
 
-.pizzaInfo--actualPrice {
+.finishBuy--price{
+    flex-direction: column;
+    align-items:start;
+}
+
+.pizzaInfo--actualPrice, .finishBuy--actualPrice {
     font-size:28px;
     margin-right:30px;
+}
+
+.finishBuy--actualPrice{
+    font-size: 20px;
 }
 
 .pizzaInfo--qtarea {
@@ -286,7 +305,7 @@ h1, h2 {
     color:#000;
 }
 
-.pizzaInfo--addButton {
+.pizzaInfo--addButton, .finishBuy--addButton {
     margin-top:30px;
     padding:20px 30px;
     border-radius:20px;
@@ -297,16 +316,46 @@ h1, h2 {
     margin-right:30px;
 }
 
-.pizzaInfo--addButton:hover {
+.finishBuy--dadosCartao, .finishBuy--dados{
+    width: 400px;
+    height: 50%;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.finishBuy--dadosCartao input, .finishBuy--dados input{
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    width: 120px;
+}
+
+#cartao{
+    width: 400px;
+}
+
+.finishBuy--dados .medios{
+    width: 250px;
+}
+
+.pizzaInfo--addButton:hover, .finishBuy--addButton:hover {
     background-color:#32a345;
 }
 
-.pizzaInfo--cancelButton {
+.pizzaInfo--cancelButton, .finishBuy--cancelButton {
     display:inline-block;
     cursor:pointer;
 }
 
-.pizzaInfo--cancelMobileButton {
+.sucessBuy--cancelButton{
+    margin-top: 25px;
+    cursor:pointer;
+}
+
+
+.pizzaInfo--cancelMobileButton, .finishBuy--cancelMobileButton, .sucessBuy--cancelMobileButton {
     display:none;
     height:40px;
     text-align:center;
@@ -438,12 +487,12 @@ h1, h2 {
         display:block;
     }
 
-    .pizzaWindowArea {
+    .pizzaWindowArea, .finishBuy {
         justify-content:flex-start;
         align-items: flex-start;
     }
 
-    .pizzaWindowBody {
+    .pizzaWindowBody, .finishBuyBody {
         width:100vw;
         display:block;
         padding:20px;
@@ -457,7 +506,7 @@ h1, h2 {
         height: auto;
     }
 
-    .pizzaInfo h1 {
+    .pizzaInfo h1, .finishBuyInfo h1 {
         margin-top:20px;
     }
 
@@ -475,18 +524,18 @@ h1, h2 {
         font-size:20px;
     }
 
-    .pizzaInfo--addButton {
+    .pizzaInfo--addButton, .finishBuy--addButton {
         font-size:20px;
         display:block;
         text-align:center;
         margin:30px auto;
     }
 
-    .pizzaInfo--cancelButton {
+    .pizzaInfo--cancelButton, .finishBuy--cancelButton {
         display:none;
     }
 
-    .pizzaInfo--cancelMobileButton {
+    .pizzaInfo--cancelMobileButton, .finishBuy--cancelMobileButton {
         display:block;
     }
 

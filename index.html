@@ -92,9 +92,9 @@
                 <div class="pizzaInfo--sizearea">
                     <div class="pizzaInfo--sector">Tamanho</div>
                     <div class="pizzaInfo--sizes">
-                        <div data-key="0" class="pizzaInfo--size">PEQUENA <span>--</span></div>
-                        <div data-key="1" class="pizzaInfo--size">MÉDIA <span>--</span></div>
-                        <div data-key="2" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
+                        <div data-key="P" class="pizzaInfo--size">PEQUENA <span>--</span></div>
+                        <div data-key="M" class="pizzaInfo--size">MÉDIA <span>--</span></div>
+                        <div data-key="G" class="pizzaInfo--size selected">GRANDE <span>--</span></div>
                     </div>
                 </div>
                 <div class="pizzaInfo--pricearea">
@@ -114,6 +114,70 @@
         </div>
     </div>
     <!-- /janela modal .pizzaWindowArea -->
+
+    <!-- janela modal .finishBuy -->
+    <div class="finishBuy">
+        <div class="finishBuyBody">
+            <div class="finishBuy--cancelMobileButton">Voltar</div>
+            <div class="buyInfo">
+                <h1>Pagamento</h1>
+                <div class="finishBuy--sizearea">
+                    <div class="finishBuy--sector">Opção de pagamento</div>
+                    <div class="finishBuy--sizes">
+                        <div data-key="C" class="finishBuy--size selected">Cartão de crédito </div>
+                        <div data-key="B" class="finishBuy--size">Boleto </div>
+                        <div data-key="P" class="finishBuy--size">PIX </div>
+                    </div>
+                </div>
+                <div class="finishBuy--pricearea">
+                    <div class="finishBuy--sector">Preço</div>
+                    <div class="finishBuy--price">
+                        <div class="finishBuy--actualPrice finish--subtotal">
+                            <span>Subtotal:</span> 
+                            <span>R$ --</span>
+                        </div>
+                        <div class="finishBuy--actualPrice finish--desconto">
+                            <span>Desconto:</span> 
+                            <span>R$ --</span>
+                        </div>
+                        <div class="finishBuy--actualPrice finish--total">
+                            <span>Total:</span> 
+                            <span>R$ --</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="finishBuy--addButton">Finalizar Pagamento</div>
+                <div class="finishBuy--cancelButton">Cancelar</div>
+
+            </div>
+            <div class="finishBuy--dados">
+                <input type="text" placeholder="Nome" class="medios" required>
+                <input type="text" placeholder="CPF" required>
+                <input type="text" placeholder="CEP" required>
+                <input type="text" placeholder="Localização"class="medios" required>
+                <input type="number" placeholder="número" required>
+                <input type="text" placeholder="Complemento"class="medios">
+                <div class="finishBuy--dadosCartao">
+                    <input type="number" placeholder="Cartão de crédito" id="cartao">
+                    <input type="number" placeholder="Três digitos">
+                    <input type="text"  placeholder="Validade">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /janela modal .pizzaWindowArea -->
+
+    <div class="sucessBuy">
+        <div class="sucessBuyBody">
+            <div class="sucessBuy--cancelMobileButton">Voltar</div>
+            <div class="sucessInfo" style="text-align: center;">
+                <h1>Pagamento Efetuado</h1>
+                <img src="https://imagepng.org/wp-content/uploads/2019/12/check-icone-1-scaled.png" width="200px">
+                <div class="sucessBuy--cancelButton">Fechar</div>
+            </div>
+        </div>
+    </div>
 
     <script src="pizzas.js"></script>
     <script src="js/script.js"></script>
