@@ -284,11 +284,18 @@ const abrirCarrinho = ()=>{
 }
 
 pizzaJson.map((item, index) => {
-    let pizzaItem = document.querySelector(".models .pizza-item").cloneNode(true);
+    let pizzaItem = document.querySelector(".models .pizza-item").cloneNode(true);  
 
     document.querySelector(".pizza-area").append(pizzaItem)
 
     preencherDadosPizza(pizzaItem,item,index)
+
+    let pizzaSwiper = pizzaItem.cloneNode(true)
+    pizzaSwiper.classList.add("swiper-slide")
+
+    document.querySelector(".swiper-wrapper").append(pizzaSwiper)
+
+    preencherDadosPizza(pizzaSwiper,item,index)
 
     pizzaItem.querySelector(".pizza-item a").addEventListener("click", (e)=>{
         e.preventDefault()
@@ -304,8 +311,22 @@ pizzaJson.map((item, index) => {
         document.querySelector(".pizzaInfo--qt").innerHTML = quantPizzas
 
         escolherTamanhoPreco(chave)
+    })
 
-        
+    pizzaSwiper.querySelector(".pizza-item a").addEventListener("click", (e)=>{
+        e.preventDefault()
+
+        let chave = pegarKey(e)
+
+        document.querySelector(".pizzaWindowArea").style.display = "flex"
+
+        preencherModal(item)
+
+        preencherTamanhos(chave)
+
+        document.querySelector(".pizzaInfo--qt").innerHTML = quantPizzas
+
+        escolherTamanhoPreco(chave)
     })
 
     document.querySelectorAll(".pizzaInfo--cancelButton, .pizzaInfo--cancelMobileButton, .finishBuy--cancelButton, .finishBuy--cancelMobileButton").forEach((item)=>{
@@ -322,3 +343,15 @@ fecharCarrinho()
 finalizarCompra()
 mudarPagamento()
 efetuarPagamento()
+
+const swiper = new Swiper('.swiper', {
+    slidesPerView: "auto",
+    loop:true,
+    spaceBetween: 30,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    }
+});
+
+console.log(document.querySelector(".swiper-wrapper").children)

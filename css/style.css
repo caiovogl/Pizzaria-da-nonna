@@ -13,6 +13,13 @@ body {
     min-height:100vh;
 }
 
+.swiper {
+    width: 600px;
+    height: 350px;
+    margin-bottom: 100px;
+    z-index: 0;
+  }
+
 .models {
     display:none;
 }
@@ -27,6 +34,7 @@ header {
     display:flex; /* none; */
     justify-content:space-between; /* flex-end; */
     align-items: center;
+    z-index: 1;
 }
 
 header h1 {
@@ -562,3 +570,4 @@ h1, h2 {
 #img-logo {
     width: 50px;
 }
+
